@@ -7,9 +7,11 @@ namespace Composer\Autoload;
 class ComposerStaticInitef599ac8743625ea82ed85be86f92389
 {
     public static $classMap = array (
-        'Compra' => __DIR__ . '/../..' . '/Vendas/Compra.php',
-        'Produto' => __DIR__ . '/../..' . '/Vendas/Produto.php',
-        'Usuario' => __DIR__ . '/../..' . '/Vendas/Usuario.php',
+        'ProjetoPHP\\Estoque\\Estoque' => __DIR__ . '/../..' . '/Estoque/Estoque.php',
+        'ProjetoPHP\\Estoque\\Produto' => __DIR__ . '/../..' . '/Estoque/Produto.php',
+        'ProjetoPHP\\Vendas\\Compra' => __DIR__ . '/../..' . '/Vendas/Compra.php',
+        'ProjetoPHP\\Vendas\\Produtos' => __DIR__ . '/../..' . '/Vendas/Produtos.php',
+        'ProjetoPHP\\Vendas\\Usuario' => __DIR__ . '/../..' . '/Vendas/Usuario.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

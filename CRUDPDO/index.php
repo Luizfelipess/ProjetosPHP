@@ -30,13 +30,23 @@ $p = new Pessoa("CRUDPDO", "127.0.0.1", "luizsilva", "abc123");
             if (!empty($nome) && !empty($telefone) && !empty($email))
 
             {
-                if(!$p->atualizarDados($id_upd, $nome, $telefone, $email))
-
-                    {
-                        echo "Email ja esta cadastrado!";
-                    }
+               $p->atualizarDados($id_upd, $nome, $telefone, $email);
+                   
+                header("location: index.php");
+                    
             }
-        }    
+             else
+             {
+                ?>
+
+                <div class="aviso">
+                    <h4>Email ja esta cadastrado!</h4>
+                </div>
+                <?php
+              }  
+                
+            }
+            
         else
         {
             //addslashe cria proteção aos dados
@@ -50,12 +60,29 @@ $p = new Pessoa("CRUDPDO", "127.0.0.1", "luizsilva", "abc123");
             //cadastrar
             if(!$p->cadastrarPessoa($nome, $telefone, $email))
             {
-            echo "Email ja esta cadastrado!";
+                ?>
+
+                <div class="aviso">
+                    <h4>Email ja esta cadastrado!</h4>
+                </div>
+                
+            
+            <?php
+            
             }
             
         }
         else{
-            echo "Preencha todos os campos";
+
+            ?>
+
+            <div class="aviso">
+                <h4>Preencha todos os campos</h4>
+            </div>
+            
+        
+        <?php
+        
         }
         }
         
@@ -119,16 +146,19 @@ $p = new Pessoa("CRUDPDO", "127.0.0.1", "luizsilva", "abc123");
             }
             else //bd vazio
                 {
-                    echo "Ainda não há pessoas cadastradas";
-                }
-        ?>
-        
-            
-                
+           ?>  
+       </table>
+               
+                <div class="aviso">
+                    
+                        <h4>Ainda não há pessoas cadastradas!</h4>
+                </div>
+           <?php       
 
-        
-        </table>
+            }
+            ?>  
     </section>
+    
 
 </body>
 </html>
