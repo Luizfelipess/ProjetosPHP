@@ -98,7 +98,7 @@ $p = new Pessoa("CRUDPDO", "127.0.0.1", "luizsilva", "abc123");
     ?>
     <section id="esquerda">
         <form method="POST">
-            <h2>CADASTRO DE CORNO</h2>
+            <h2>CADASTRO DE PESSOAS</h2>
             <label for="nome"> Nome</label>
             <!-- //no php verifica se esta vazio -->
             <input type="text" name="nome" id="nome" value="<?php if(isset($res)){echo $res['nome'];} ?>">
